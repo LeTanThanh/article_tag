@@ -1,7 +1,15 @@
 10.times do
-  article = Article.create title: FFaker::Lorem.sentence, content: FFaker::Lorem.paragraph
+  Article.create title: FFaker::Lorem.sentence, content: FFaker::Lorem.paragraph
+end
 
-  rand(5).times do
-    article.tags.create name: FFaker::Lorem.word
+10.times do
+  Tag.create name: FFaker::Lorem.sentence
+end
+
+tags = Tag.all.to_a
+Article.all.each do |article|
+  sample_tags = tags.sample rand(10)
+  sample_tags.each do |tag|
+    article.tags << tag
   end
 end
