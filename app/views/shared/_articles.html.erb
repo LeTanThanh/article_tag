@@ -13,7 +13,7 @@
         <td><%= article.id %></td>
         <td><%= article.title %></td>
         <td><%= link_to "Read more ...", article %></td>
-        <td><%= link_to "Edit", "#" %></td>
+        <td><%= link_to "Edit", edit_article_path(article) %></td>
       </tr>
     <% end %>
   </tbody>
