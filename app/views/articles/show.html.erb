@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>
+    <%= @article.title %>
+  </h2>
+
+  <p>Tags:</p>
+  <ul>
+    <% @tags.each_with_index do |tag, index| %>
+      <li>
+        <%= link_to tag.name, "#" %> <%= tag.articles.count %> article(s)
+      </li>
+    <% end %>
+  </ul>
+
+  <p><%= @article.content %></p>
+</div>
