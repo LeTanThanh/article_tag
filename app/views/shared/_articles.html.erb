@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Ttile</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% articles.each do |article| %>
+      <tr>
+        <td><%= article.id %></td>
+        <td><%= article.title %></td>
+        <td><%= link_to "Read more ...", "#" %></td>
+        <td><%= link_to "Edit", "#" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
