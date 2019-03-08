@@ -16,8 +16,10 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article is updated"
       redirect_to root_url
     else
+      @tags_name = article_params[:tags_name]
+
       flash[:warning] = "Article isn't updated"
-      redirect_to edit_article_path(@article)
+      render :edit
     end
   end
 

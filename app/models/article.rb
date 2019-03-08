@@ -5,6 +5,9 @@ class Article < ApplicationRecord
   attr_accessor :tags_name
   after_save :save_tags
 
+  validates :title, presence: true
+  validates :content, presence: true
+
   def tags_name
     tags.pluck(:name).join(", ")
   end

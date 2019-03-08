@@ -14,7 +14,7 @@
     <div class="form-group">
       <%= f.label :tags_name, "Tags", class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <%= f.text_field :tags_name, class: "form-control" %>
+        <%= f.text_field :tags_name, class: "form-control", value: @tags_name || @article.tags_name %>
       </div>
     </div>
 
