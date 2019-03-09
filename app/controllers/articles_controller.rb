@@ -16,8 +16,6 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article is updated"
       redirect_to @article
     else
-      @tags_name = article_params[:tags_name]
-
       flash[:danger] = "Article isn't created"
       render :new
     end
@@ -34,8 +32,6 @@ class ArticlesController < ApplicationController
       flash[:success] = "Article is updated"
       redirect_to @article
     else
-      @tags_name = article_params[:tags_name]
-
       flash[:danger] = "Article isn't updated"
       render :edit
     end

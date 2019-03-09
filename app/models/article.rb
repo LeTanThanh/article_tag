@@ -9,7 +9,11 @@ class Article < ApplicationRecord
   validates :content, presence: true
 
   def tags_name
-    tags.pluck(:name).join(", ")
+    @tags_name ||= tags.pluck(:name).join(", ")
+  end
+
+  def tasg_name=(value)
+    @tags_name = value
   end
 
   private
