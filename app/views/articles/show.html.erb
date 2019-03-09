@@ -6,7 +6,7 @@
   <ul>
     <% @tags.each_with_index do |tag, index| %>
       <li>
-        <%= link_to tag.name, "#" %> <%= tag.articles.count %> article(s)
+        <%= link_to tag.name, tag %> <%= tag.articles.count %> article(s)
       </li>
     <% end %>
   </ul>
