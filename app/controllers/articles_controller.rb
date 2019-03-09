@@ -5,6 +5,24 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def new
+    @article = Article.new
+  end
+
+  def create
+    @article = Article.new article_params
+
+    if @article.save
+      flash[:success] = "Article is updated"
+      redirect_to @article
+    else
+      @tags_name = article_params[:tags_name]
+
+      flash[:danger] = "Article isn't created"
+      render :new
+    end
+  end
+
   def show
     @tags = @article.tags
   end
@@ -14,11 +32,11 @@ class ArticlesController < ApplicationController
   def update
     if @article.update_attributes article_params
       flash[:success] = "Article is updated"
-      redirect_to root_url
+      redirect_to @article
     else
       @tags_name = article_params[:tags_name]
 
-      flash[:warning] = "Article isn't updated"
+      flash[:danger] = "Article isn't updated"
       render :edit
     end
   end

@@ -1,7 +1,6 @@
 <div class="container">
-  <h2>
-    <%= @article.title %>
-  </h2>
+  <h2><%= @article.title %></h2>
+  <p>Back to <%= link_to "Articles", articles_path %></p>
 
   <p>Tags:</p>
   <ul>

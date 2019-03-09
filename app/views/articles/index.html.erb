@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Articles</h2>
-  <p>Enjoy your favourite article</p>
+  <p>Enjoy your favourite article or <%= link_to "Create article", new_article_path %></p>
 
   <%= render "shared/articles", articles: @articles %>
 </div>
